@@ -1,0 +1,2 @@
+class ReportersController < ApplicationController
+end
