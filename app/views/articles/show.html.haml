@@ -4,3 +4,8 @@
 
 .content
   = sanitize @article.content
+
+.review-score
+  %div= t('overall_good_or_bad')
+  = link_to t('.good'), score_article_review_path(@article, rank: 'good'), class: 'btn btn-large btn-success'
+  = link_to t('bad'), score_article_review_path(@article, rank: 'bad'), class: 'btn btn-large btn-danger'

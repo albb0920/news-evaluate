@@ -12,6 +12,7 @@ NewsEvaluate::Application.routes.draw do
   resources :articles do
     resource :review do
       get :toggle_title_issue
+      get :score
     end
   end
 
