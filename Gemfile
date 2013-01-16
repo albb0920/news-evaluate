@@ -6,15 +6,20 @@ gem 'rails', '3.2.11'
 gem 'cancan'
 
 # model related
-gem 'sqlite3'
+gem 'pg'
+gem "paperclip", "~> 3.0"
 
 # view related
 gem 'haml'
 gem 'sass'
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :git => 'http://github.com/anjlab/bootstrap-rails.git'
+gem 'bootstrap-sass'
 gem 'bootstrap_helper', git: 'git://github.com/albb0920/bootstrap-helper.git'
 gem 'kaminari'
 gem 'nested_form'
+gem "ckeditor"
+
+# other tools
+gem 'rails_admin'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -50,3 +55,6 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-spork'
 end
+
+
+gem "devise"

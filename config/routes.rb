@@ -1,13 +1,14 @@
 NewsEvaluate::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :users
+
   resources :reporters
-
-
   resources :companies
-
-
   resources :articles
 
-
+  root to: 'articles#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,5 @@
+zh-TW:
+  site_name: "新聞批改娘"
+  activerecord:
+    models:
+      article: "新聞"
