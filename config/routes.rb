@@ -1,4 +1,7 @@
 NewsEvaluate::Application.routes.draw do
+  resources :reviews
+
+
   mount Ckeditor::Engine => '/ckeditor'
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
@@ -6,7 +9,12 @@ NewsEvaluate::Application.routes.draw do
 
   resources :reporters
   resources :companies
-  resources :articles
+  resources :articles do
+    resource :review do
+      get :toggle_title_issue
+    end
+  end
+
 
   root to: 'articles#index'
   # The priority is based upon order of creation:

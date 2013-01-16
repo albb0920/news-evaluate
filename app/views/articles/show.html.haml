@@ -1,3 +1,6 @@
 %h1= @article.title
+.evaluate-title
+  = render partial: 'evaluate_title'
+
 .content
   = sanitize @article.content

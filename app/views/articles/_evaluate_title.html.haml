@@ -1,0 +1,4 @@
+- Review::TITLE_ISSUES.each do |issue|
+  = link_to toggle_title_issue_article_review_path(@article, issue: issue), remote: true, class: ('toggle-title-issue' + ((@review.title_issues.include?(issue))? ' on':'')) do
+    = issue
+%hr
