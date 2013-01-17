@@ -21,6 +21,10 @@ class ReviewsController < ApplicationController
 
   def add_marker_comment
     @review.marker_comments.create(params[:marker_comment])
+    respond_to do |format|
+      format.js { render text: ''}
+      format.html { redirect_to :back }
+    end
   end
 
   def load_review

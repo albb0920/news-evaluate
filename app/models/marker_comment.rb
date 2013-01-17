@@ -6,4 +6,12 @@ class MarkerComment < ActiveRecord::Base
   def score
     content_issues.sum('value')
   end
+
+  def content_issues_string
+    content_issues.map(&:name)
+  end
+
+  def as_json(options)
+    super(methods: [:content_issues_string])
+  end
 end

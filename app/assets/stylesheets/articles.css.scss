@@ -28,7 +28,30 @@ body.articles.index{
     &.red h1 {color: #ED3E3E; }
     &.gold h1 { color: #ffd700; }
   }
+}
 
+body.articles.show {
+  overflow-y: scroll;
+
+  #after-content{
+    border-top: 1px solid #DDD;
+  }
+
+  .marker-comment{
+    border-bottom: 1px dotted silver;
+    span{
+      background: #EEE;
+      padding: 0 2px;
+      margin: 0 2px;
+    }
+    &:hover{
+      background: #555;
+      color: #DDD;
+      span{
+        color: black;
+      }
+    }
+  }
 }
 
 .toggle-title-issue{
@@ -45,4 +68,20 @@ body.articles.index{
   border: 1px solid gray;
   background: white;
   margin-top: 10px;
+  h1{
+    line-height: 130%;
+    font-size: 14px;
+    margin: 0;
+    border-bottom: 1px solid gray;
+    padding-left: 2px;
+    background: #DDD;
+    font-weight: normal;
+  }
+  form{
+    display: block;
+    margin: 5px;
+    select{
+      width: 100%;
+    }
+  }
 }
