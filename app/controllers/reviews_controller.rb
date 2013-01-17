@@ -18,6 +18,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def add_marker_comment
+    @review.marker_comments.create(params[:marker_comment])
+  end
+
   def load_review
     @review = Review.find_or_initialize_by_user_id_and_article_id(current_or_guest_user.id, @article.id)
   end

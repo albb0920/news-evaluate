@@ -17,6 +17,11 @@ gem 'bootstrap_helper', git: 'git://github.com/albb0920/bootstrap-helper.git'
 gem 'kaminari'
 gem 'nested_form'
 gem "ckeditor"
+gem "simple_form"
+gem "select2-rails"
+
+# js related
+gem 'ruby-haml-js'
 
 # other tools
 gem 'rails_admin'

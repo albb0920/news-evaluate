@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  def load_review
+    @review = Review.find_or_initialize_by_user_id_and_article_id(current_or_guest_user.id, @article.id)
+  end
+
   # if user is logged in, return current_user, else return guest_user
   def current_or_guest_user
     if current_user

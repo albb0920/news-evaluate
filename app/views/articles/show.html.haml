@@ -2,10 +2,33 @@
 .evaluate-title
   = render partial: 'evaluate_title'
 
-.content
-  = sanitize @article.content
+.row
+  .content.span10
+    = sanitize @article.content
+
+  #marker-comments.span2
 
 .review-score
   %div= t('overall_good_or_bad')
   = link_to t('.good'), score_article_review_path(@article, rank: 'good'), class: 'btn btn-large btn-success'
   = link_to t('bad'), score_article_review_path(@article, rank: 'bad'), class: 'btn btn-large btn-danger'
+
+%table#current-status
+  %tr
+    %td= t('.your_score')
+    %td= t('.current_score')
+  %tr
+    %td= @review.final_score
+    %td= @article.score
+
+
+:javascript
+  window.marker_comments = #{ @article.marker_comments.to_json }
+
+.add-comment-marker(style="display:none")
+  = simple_form_for MarkerComment.new, url: add_marker_comment_article_review_path(@article) do |f|
+    = f.input :selection
+    = f.association :content_issues
+    = f.input :comment
+    = f.submit
+

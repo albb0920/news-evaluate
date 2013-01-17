@@ -13,6 +13,7 @@ NewsEvaluate::Application.routes.draw do
     resource :review do
       get :toggle_title_issue
       get :score
+      post :add_marker_comment
     end
   end
 
