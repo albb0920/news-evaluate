@@ -1,3 +1,37 @@
+@import "bootstrap";
+
+body.articles.index{
+  padding-top: 60px;
+
+  .article-link{
+    display: block;
+    margin-bottom: 10px;
+    @include clearfix();
+
+    &:hover{
+      text-decoration: none;
+    }
+
+    img{
+      float: left;
+      border: 1px solid gray;
+      margin-right: 5px;
+    }
+
+    h1{
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0 0 4px;
+    }
+
+    &.orange h1{ color: #FAAD32; }
+    &.red h1 {color: #ED3E3E; }
+    &.gold h1 { color: #ffd700; }
+  }
+
+}
+
+
 .add-comment-marker{
   position: absolute;
   border: 1px solid gray;

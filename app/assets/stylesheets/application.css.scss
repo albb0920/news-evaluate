@@ -10,9 +10,9 @@
  *
  *= require select2
  *= require_self
- *= require_tree .
  */
 @import "bootstrap";
+@import "articles";
 
 body{
   padding-top: 40px;
