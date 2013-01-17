@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
     elsif params[:rank] == 'bad'
       @review.update_attributes(score: -1)
     end
+    redirect_to :back, notice: 'success'
   end
 
   def add_marker_comment

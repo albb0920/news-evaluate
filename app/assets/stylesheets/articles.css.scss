@@ -31,6 +31,14 @@ body.articles.index{
 
 }
 
+.toggle-title-issue{
+  display: inline-block;
+  background: silver;
+  color: black;
+  margin-right: 5px;
+  border: 1px solid gray;
+  &.on{ background: red; color: white; border: 1px solid #CC0000;}
+}
 
 .add-comment-marker{
   position: absolute;
