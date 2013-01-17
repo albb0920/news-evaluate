@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130116181616) do
+ActiveRecord::Schema.define(:version => 20130117065349) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -50,6 +50,28 @@ ActiveRecord::Schema.define(:version => 20130116181616) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "content_issues", :force => true do |t|
+    t.string   "name"
+    t.integer  "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "content_issues_marker_comments", :id => false, :force => true do |t|
+    t.integer "content_issue_id"
+    t.integer "marker_comment_id"
+  end
+
+  create_table "marker_comments", :force => true do |t|
+    t.string   "selection"
+    t.string   "comment"
+    t.integer  "review_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "marker_comments", ["review_id"], :name => "index_marker_comments_on_review_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"

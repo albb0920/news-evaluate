@@ -15,3 +15,4 @@
 //= require bootstrap
 //= require ckeditor/init
 //= require rangy
+//= require select2

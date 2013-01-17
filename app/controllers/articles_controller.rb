@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   load_resource
+  before_filter :load_review
 
   def index
     @articles = Article.all
@@ -11,4 +12,5 @@ class ArticlesController < ApplicationController
 
   def toggle_title_issue
   end
+
 end
