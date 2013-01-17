@@ -1,6 +1,6 @@
 - @articles.each do |article|
   = link_to article, class: 'article-link' + score_class(article) do
-    %img(src="http://placekitten.com/g/200/100")
+    = image_tag article.image(:thumb)
     %h1= article.title
     .excerpt
       = strip_tags(article.content)[0..100]
