@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   load_resource
-  before_filter :load_review
+  before_filter :load_review, only: [:show]
 
   def index
     @articles = Article.all
