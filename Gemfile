@@ -56,11 +56,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'thin'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-spork'
 end
 
 
+gem 'thin'
 gem "devise"
